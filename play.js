@@ -2,12 +2,14 @@ const board = document.getElementById("board");
 const squares = document.getElementsByClassName("square");
 const players = ["X", "O"];
 let currentPlayer = players[0];
+
 const endMessage = document.createElement("h2");
 endMessage.textContent = `🏁 X's turn!`;
 endMessage.style.marginTop = "40px";
 endMessage.style.textAlign = "center";
 board.after(endMessage);
 var someoneWon = false;
+
 const winning_combinations = [
   [0, 1, 2],
   [3, 4, 5],
@@ -73,6 +75,6 @@ function restartButton() {
   for (let i = 0; i < squares.length; i++) {
     squares[i].textContent = "";
   }
-  endMessage.textContent = `X's turn!`;
+  endMessage.textContent = `📣 X's turn!`;
   currentPlayer = players[0];
 }
